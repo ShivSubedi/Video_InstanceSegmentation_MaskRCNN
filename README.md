@@ -29,20 +29,23 @@ Project Workflow
 Step 1: Downloading the Repository
 - Clone the repository to your local machine or Google Colab environment.
 
-Step 2: Installing Required Dependencies
-- Navigate to the repository folder (Mask_RCNN-TF2) and install all required libraries.
-- Some dependencies require compatibility adjustments for TensorFlow 2.x.
-
- 
-Step 3: Importing the Required Libraries
-  - 3(A): Installing Older Versions of NumPy
+Step 2: Importing the Required Libraries
+  - 2(A): Installing Older Versions of NumPy
     I had to downgrade and install the numpy version (1.23.5) that:
       - supports 'np.bool' alias
       - is compatible to the Tensoflow version (2.15.0) to be installed below.
       - is compatible with Python version 3.11 I am currently using
-  - 3(B): Installing Older Versions of TensorFlow
+  - 2(B): Installing Older Versions of TensorFlow
     - TensorFlow 2.16+ introduced changes that break compatibility with older .h5 weights. TensorFlow 2.15.0 still supports by_name=True for .h5 models without issues.
-   
+  - 2(C): Install 'opendatasets'
+    - Opendatasets allows you to easily download datasets from various sources, especially Kaggle.
+  - 2(D): Import other libraries for segmentation task
+     - imports inclue: os, sys, cv2, skimage.io, cv2_imshow
+
+Step 3: Installing Required Dependencies
+- Navigate to the repository folder (Mask_RCNN-TF2) and install all required libraries.
+- Some dependencies require compatibility adjustments for TensorFlow 2.x.
+
 Step 4: Importing Files from the MRCNN Folder
 - Import the necessary files from the MRCNN directory, which includes model architecture, utility, and visualisation functions.
 
